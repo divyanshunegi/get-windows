@@ -1,13 +1,41 @@
-// cjs-wrapper.cjs
 'use strict';
 
-let getWindows;
+let getWindowsModule;
 
-module.exports = async (...args) => {
-  if (!getWindows) {
-    getWindows = (await import('./index.js')).default;
+async function importModule() {
+  if (!getWindowsModule) {
+    getWindowsModule = await import('./index.js');
   }
-  return getWindows(...args);
-};
+  return getWindowsModule;
+}
 
-module.exports.default = module.exports;
+async function activeWindow(...args) {
+  const module = await importModule();
+  return module.activeWindow(...args);
+}
+
+function activeWindowSync(...args) {
+  return getWindowsModule.activeWindowSync(...args);
+}
+
+async function openWindows(...args) {
+  const module = await importModule();
+  return module.openWindows(...args);
+}
+
+function openWindowsSync(...args) {
+  return getWindowsModule.openWindowsSync(...args);
+}
+
+module.exports = {
+  activeWindow,
+  activeWindowSync,
+  openWindows,
+  openWindowsSync,
+  default: {
+    activeWindow,
+    activeWindowSync,
+    openWindows,
+    openWindowsSync
+  }
+};

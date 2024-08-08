@@ -83,3 +83,10 @@ export function openWindowsSync(options) {
 }
 
 // Note to self: The `main` field in package.json is requried for pre-gyp.
+
+export default {
+	activeWindow,
+	activeWindowSync,
+	openWindows,
+	openWindowsSync
+  };
