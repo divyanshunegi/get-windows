@@ -15,10 +15,19 @@
 	},
 	"type": "module",
 	"exports": {
-		"types": "./index.d.ts",
-		"default": "./index.js"
+		".": {
+			"import": {
+				"types": "./index.d.ts",
+				"default": "./index.js"
+			},
+			"require": {
+				"types": "./index.d.cts",
+				"default": "./cjs-wrapper.cjs"
+			}
+		}
 	},
-	"main": "./index.js",
+	"main": "./cjs-wrapper.cjs",
+	"module": "./index.js",
 	"sideEffects": false,
 	"engines": {
 		"node": ">=18.18"
@@ -45,6 +54,7 @@
 	"files": [
 		"index.js",
 		"index.d.ts",
+		"cjs-wrapper.cjs",
 		"lib",
 		"main",
 		"Sources/windows/main.cc",

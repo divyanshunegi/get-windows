@@ -1,0 +1,28 @@
+{
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:get-windows}",
+            "name": "Debug get-windows",
+            "program": "${workspaceFolder:get-windows}/.build/debug/get-windows",
+            "preLaunchTask": "swift: Build Debug get-windows"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "sourceLanguages": [
+                "swift"
+            ],
+            "args": [],
+            "cwd": "${workspaceFolder:get-windows}",
+            "name": "Release get-windows",
+            "program": "${workspaceFolder:get-windows}/.build/release/get-windows",
+            "preLaunchTask": "swift: Build Release get-windows"
+        }
+    ]
+}
