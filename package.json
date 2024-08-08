@@ -13,21 +13,9 @@
 		"email": "sindresorhus@gmail.com",
 		"url": "https://sindresorhus.com"
 	},
-	"type": "module",
-	"exports": {
-		".": {
-			"import": {
-				"types": "./index.d.ts",
-				"default": "./index.js"
-			},
-			"require": {
-				"types": "./index.d.cts",
-				"default": "./cjs-wrapper.cjs"
-			}
-		}
-	},
-	"main": "./cjs-wrapper.cjs",
-	"module": "./index.js",
+	"type": "commonjs",
+	"main": "./index.js",
+	"types": "./index.d.ts",
 	"sideEffects": false,
 	"engines": {
 		"node": ">=18.18"
@@ -54,7 +42,6 @@
 	"files": [
 		"index.js",
 		"index.d.ts",
-		"cjs-wrapper.cjs",
 		"lib",
 		"main",
 		"Sources/windows/main.cc",
